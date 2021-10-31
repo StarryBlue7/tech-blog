@@ -1,16 +1,25 @@
 const router = require('express').Router();
-const { User, Blog } = require('../models');
+const sequelize = require('../config/connection');
+const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
         const blogData = await Blog.findAll({
-        include: [
-            {
-            model: User,
-            attributes: ['name'],
-            },
-        ],
+            include: [
+                { model: User, attributes: ['name'] },
+                { model: Comment }
+            ],
+            attributes: {
+                include: [
+                    [
+                        sequelize.literal(
+                        '(SELECT COUNT(comment.id) FROM comment WHERE comment.blog_id = blog.id)'
+                        ),
+                        'totalComments',
+                    ]
+                ]
+            }
         });
 
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
@@ -27,12 +36,20 @@ router.get('/', async (req, res) => {
 router.get('/blog/:id', async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {
-        include: [
-            {
-                model: User,
-                attributes: ['name'],
-            },
-        ],
+            include: [
+                { model: User, attributes: ['name'] },
+                { model: Comment }
+            ],
+            attributes: {
+                include: [
+                    [
+                        sequelize.literal(
+                        '(SELECT COUNT(comment.id) FROM comment WHERE comment.blog_id = blog.id)'
+                        ),
+                        'totalComments',
+                    ]
+                ]
+            }
         });
 
         const blog = blogData.get({ plain: true });
@@ -50,7 +67,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Blog }],
+            include: [
+                { model: Blog }
+            ]
         });
 
         const user = userData.get({ plain: true });
