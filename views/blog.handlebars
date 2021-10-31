@@ -1,0 +1,16 @@
+<section class="card bg-light text-secondary shadow mb-4">
+    <summary class="d-flex flex-row flex-wrap card-header bg-info text-light justify-content-between align-items-end">
+        <div class="d-flex flex-row flex-wrap align-items-end">
+            <h4 class="mb-0 mr-2">{{title}}</h4>
+            <p class="mb-0">by {{user.name}}, {{format_date date_created}}</p>
+        </div>
+        <p class="mb-0 align-bottom">{{totalComments}} comments</p>
+    </summary>
+    <article class="card-body">
+        <p>{{content}}</p>
+    </article>
+</section>
+
+{{#each comments}}
+{{> comments}}
+{{/each}}
