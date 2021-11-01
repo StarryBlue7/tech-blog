@@ -1,4 +1,4 @@
-const newFormHandler = async (event) => {
+const addBlog = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#blog-title').value.trim();
@@ -21,7 +21,7 @@ const newFormHandler = async (event) => {
     }
 };
 
-const delButtonHandler = async (event) => {
+const deleteBlog = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
 
@@ -39,8 +39,8 @@ const delButtonHandler = async (event) => {
 
 document
     .querySelector('#new-blog-form')
-    .addEventListener('submit', newFormHandler);
+    .addEventListener('submit', addBlog);
 
 document
     .querySelector('.blogs')
-    .addEventListener('click', delButtonHandler);
+    .addEventListener('click', deleteBlog);
