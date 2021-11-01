@@ -19,17 +19,20 @@
     </article>
 </section>
 
+{{#if blogs.length}}
 <h3 class="text-light">My Blogs</h3>
+{{/if}}
+
 {{#each blogs}}
 <section class="blogs card bg-light text-secondary shadow mb-4">
-    <summary class="d-flex flex-row flex-wrap card-header bg-info text-light justify-content-between align-items-end">
-        <div class="d-flex flex-row flex-wrap align-items-end">
-            <a class="text-decoration-none" href="/blog/{{id}}">
-                <h4 class="mb-0 mr-2 text-light">{{title}}</h4>
-            </a>
-            <p class="mb-0">Created {{format_date date_created}}</p>
+    <summary class="d-flex flex-row card-header bg-info text-light justify-content-between align-items-end pr-3">
+        <a class="text-decoration-none" href="/blog/{{id}}">
+            <h4 class="mb-0 mr-2 text-light">{{title}}</h4>
+        </a>
+        <div class="d-flex flex-row flex-wrap flex-fill align-items-end">
+            <p class="mb-0 text-right">Created {{format_date date_created}}</p>
+            <button class="delete btn btn-secondary btn-sm" data-id="{{id}}">Delete</button>
         </div>
-        <button class="delete btn btn-secondary" data-id="{{id}}">Delete</button>
     </summary>
     <article class="card-body">
         <p>{{content}}</p>

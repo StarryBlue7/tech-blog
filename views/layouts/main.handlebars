@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 
-    <title>Tech Blog</title>
+    <title>The Tech Tree</title>
 </head>
 
 <body class="bg-secondary">
@@ -15,10 +15,10 @@
             <li class="nav-item">
                 <a class="nav-link text-light h6" href="/">Home</a>
             </li>
-            {{#if logged_in}}
             <li class="nav-item">
                 <a class="nav-link text-light h6" href="/dashboard">Dashboard</a>
             </li>
+            {{#if logged_in}}
             <li class="nav-item">
                 <a id="logout" class="nav-link text-light h6" href="">Logout</a>
             </li>
@@ -29,7 +29,7 @@
             {{/if}}
         </ul>
         
-        <h1>Tech Blog</h1>
+        <h1>The Tech Tree</h1>
     </header>
 
     <main class="d-flex flex-column align-items-center">
