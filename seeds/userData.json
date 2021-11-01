@@ -1,27 +1,22 @@
 [
   {
     "name": "Squirrel",
-    "email": "squirrel@tree.com",
     "password": "acorns12345"
   },
   {
     "name": "Giraffe",
-    "email": "giraffe@tree.com",
     "password": "leaves12345"
   },
   {
     "name": "Cat",
-    "email": "cat@forest.com",
     "password": "kibble12345"
   },
   {
     "name": "Bear",
-    "email": "bear@forest.com",
     "password": "salmon12345"
   },
   {
     "name": "Panda",
-    "email": "panda@forest.com",
     "password": "bamboo12345"
   }
 ]
