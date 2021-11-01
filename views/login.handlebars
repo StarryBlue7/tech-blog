@@ -1,0 +1,33 @@
+<section class="card bg-light text-secondary shadow mb-4">
+    <summary class="d-flex flex-row flex-wrap card-header bg-info text-light justify-content-between align-items-end">
+        <h4 class="mb-0 mr-2">Login or Sign Up</h4>
+    </summary>
+    <form id="account-form" class="card-body col-9">
+        <div class="row align-items-end justify-content-end mt-2">
+            <div class="col-auto">
+                <label for="username-input" class="col-form-label">User Name</label>
+            </div>
+            <div class="col-auto">
+                <input type="text" id="username-input" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row align-items-end justify-content-end mt-2">
+            <div class="col-auto">
+                <label for="password-input" class="col-form-label">Password</label>
+            </div>
+            <div class="col-auto">
+                <input type="password" id="password-input" class="form-control" aria-describedby="passwordHelpInline">
+            </div>
+        </div>
+        <div class="row align-items-end justify-content-end">
+            <div class="col-auto">
+                <button id="login-btn" class="btn btn-info mt-2" type="submit" name="current-account" value="true">Login</button>
+            </div>
+            <div class="col-auto">
+                <button id="signup-btn" class="btn btn-secondary mt-2" type="submit" name="current-account" value="false">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<script src="/js/login.js"></script>
