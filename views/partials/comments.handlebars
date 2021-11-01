@@ -1,6 +1,9 @@
-<section class="card bg-light shadow">
-    <summary class="d-flex flex-row flex-wrap card-header bg-info text-light justify-content-between align-items-end">
+<section class="comment card bg-light shadow">
+    <summary class="d-flex flex-row flex-wrap card-header bg-info text-light justify-content-between align-items-end pr-3">
         <p class="mb-0">{{text}}</p>
         <i class="mb-0 flex-fill text-right">- {{commenter}}, {{format_date date_created}}</i>
+        {{#if isOwner}}
+        <button class="btn btn-secondary btn-sm ml-3" data-id="{{id}}">Delete</button>
+        {{/if}}
     </summary>
 </section>

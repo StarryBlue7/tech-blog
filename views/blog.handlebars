@@ -11,6 +11,21 @@
     </article>
 </section>
 
-{{#each comments}}
-{{> comments}}
-{{/each}}
+<section class="card bg-light text-secondary shadow mb-4">
+    <article class="card-body">
+        <form id="new-comment-form">
+            <div class="mb-3">
+                <textarea class="form-control" id="comment-box" aria-describedby="new comment" placeholder="Add comment" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+    </article>
+</section>
+
+<section id="comments">
+    {{#each comments}}
+    {{> comments}}
+    {{/each}}
+</section>
+
+<script src="/js/blog.js"></script>
