@@ -11,6 +11,7 @@
     </article>
 </section>
 
+{{#if logged_in}}
 <section class="card bg-light text-secondary shadow mb-4">
     <article class="card-body">
         <form id="new-comment-form">
@@ -21,6 +22,7 @@
         </form>
     </article>
 </section>
+{{/if}}
 
 <section id="comments">
     {{#each comments}}
