@@ -29,14 +29,26 @@
         <a class="text-decoration-none" href="/blog/{{id}}">
             <h4 class="mb-0 mr-2 text-light">{{title}}</h4>
         </a>
-        <div class="d-flex flex-row flex-wrap flex-fill align-items-end">
+
+        <div class="d-flex flex-row flex-wrap flex-fill align-items-end justify-content-end">
             <p class="mb-0 text-right">Created {{format_date date_created}}</p>
-            <button class="delete btn btn-secondary btn-sm" data-id="{{id}}">Delete</button>
+            <div class="d-flex flex-row flex-fill justify-content-end btn-box">
+                <button class="edit btn btn-secondary btn-sm ml-2" data-edit="true">Edit</button>
+                <button class="delete btn btn-secondary btn-sm ml-2" data-delete="{{id}}">Delete</button>
+            </div>
         </div>
     </summary>
+
     <article class="card-body">
         <p>{{content}}</p>
     </article>
+
+    <form class="edit-form" data-id="{{id}}" style="display: none">
+        <div class="mb-3">
+            <textarea class="new-content form-control" name="new-content" data-id="{{id}}" aria-describedby="blog content" rows="3">{{content}}</textarea>
+        </div>
+        <button type="submit" class="btn btn-info mb-2 ml-2" data-id="{{id}}">Submit</button>
+    </form>
 </section>
 {{/each}}
 
