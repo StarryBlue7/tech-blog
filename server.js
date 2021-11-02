@@ -20,7 +20,7 @@ const sess = {
     },
     resave: true,
     rolling: true,
-    saveUninitialized: true,
+    saveUninitialized: false,
     store: new SequelizeStore({
         db: sequelize
     })
