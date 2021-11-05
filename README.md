@@ -49,6 +49,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * [Sequelize ORM](https://sequelize.org/)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
+* [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
 * [Express.js](http://expressjs.com/)
 * [Node.js](https://nodejs.org/en/)
 
