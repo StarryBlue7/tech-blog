@@ -1,3 +1,4 @@
+// Add new blog
 async function addBlog() {
     const title = document.querySelector('#blog-title').value.trim();
     const content = document.querySelector('#blog-content').value.trim();
@@ -19,6 +20,7 @@ async function addBlog() {
     }
 };
 
+// Delete blog
 async function deleteBlog(id) {
     const response = await fetch(`/api/blogs/${id}`, {
         method: 'DELETE',
@@ -31,6 +33,7 @@ async function deleteBlog(id) {
     }
 };
 
+// Update blog
 async function editBlog(event) {
     event.preventDefault();
     const id = event.target.getAttribute('data-id');
@@ -53,6 +56,7 @@ async function editBlog(event) {
     }
 }
 
+// Button handler
 function btnHandler(event) {
     event.preventDefault();
     const btn = event.target;

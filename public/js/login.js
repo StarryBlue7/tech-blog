@@ -1,3 +1,4 @@
+// Login user
 async function loginFormHandler() {
     console.log('login')
 
@@ -19,6 +20,7 @@ async function loginFormHandler() {
     }
 };
 
+// Sign up new user
 async function signupFormHandler() {
     console.log('signup')
 
@@ -40,6 +42,7 @@ async function signupFormHandler() {
     }
 };
 
+// Allow form to function for either login or sign up
 function checkAccount(event) {
   event.preventDefault();
   const currentAccount = event.submitter.value;

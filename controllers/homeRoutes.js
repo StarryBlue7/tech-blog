@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Blog, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Homepage
 router.get('/', async (req, res) => {
     try {
         const blogData = await Blog.findAll({
@@ -33,6 +34,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// Single blog page
 router.get('/blog/:id', async (req, res) => {
     try {
         const blogData = await Blog.findByPk(req.params.id, {
@@ -66,6 +68,7 @@ router.get('/blog/:id', async (req, res) => {
     }
 });
 
+// User dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
@@ -87,6 +90,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
+// Login/signup page
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/dashboard');

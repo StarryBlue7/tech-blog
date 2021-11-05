@@ -1,3 +1,4 @@
+// Add comment
 const addComment = async (event) => {
     event.preventDefault();
 
@@ -21,6 +22,7 @@ const addComment = async (event) => {
     }
 };
 
+// Delete comment
 const deleteComment = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
@@ -37,6 +39,7 @@ const deleteComment = async (event) => {
     }
 };
 
+// Buttons
 document
     .querySelector('#new-comment-form')
     .addEventListener('submit', addComment);
